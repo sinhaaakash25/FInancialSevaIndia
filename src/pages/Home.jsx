@@ -24,9 +24,12 @@ export default function Home() {
             <Link to="/plans" className="flex items-center gap-2 rounded-full bg-navy px-5 py-3 text-sm font-medium text-paper hover:opacity-90">
               {t('home.hero.cta.explore')} <ArrowRight size={16} />
             </Link>
-            <a href="#chat-hint" className="flex items-center gap-2 rounded-full border border-navy/20 bg-white px-5 py-3 text-sm font-medium text-navy hover:bg-navy/5">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-bindu-chat'))}
+              className="flex items-center gap-2 rounded-full border border-navy/20 bg-white px-5 py-3 text-sm font-medium text-navy hover:bg-navy/5"
+            >
               <MessageCircle size={16} /> {t('home.hero.cta.chat')}
-            </a>
+            </button>
           </div>
 
           <div className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-navy/10 pt-6">
@@ -73,9 +76,12 @@ export default function Home() {
         <div className="rounded-3xl bg-navy px-6 py-10 text-center text-paper sm:px-14">
           <h2 className="font-display text-2xl font-semibold sm:text-3xl">{t('home.cta.title')}</h2>
           <p className="mx-auto mt-3 max-w-lg text-paper/70">{t('home.cta.body')}</p>
-          <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-marigold px-5 py-3 text-sm font-medium text-navy">
-            <MessageCircle size={16} /> {t('home.cta.button')} — {t('chat.launcher')} ↘
-          </p>
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-bindu-chat'))}
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-marigold px-5 py-3 text-sm font-medium text-navy transition-transform hover:scale-105"
+          >
+            <MessageCircle size={16} /> {t('home.cta.button')}
+          </button>
         </div>
       </section>
     </div>

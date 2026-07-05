@@ -28,6 +28,12 @@ export default function ChatWidget() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
+    const openChat = () => setOpen(true);
+    window.addEventListener('open-bindu-chat', openChat);
+    return () => window.removeEventListener('open-bindu-chat', openChat);
+  }, []);
+
+  useEffect(() => {
     if (open && messages.length === 0) {
       pushBindu(t('chat.msg.greet'));
       setState((s) => ({ ...s, step: STEPS.ASK_NAME }));
