@@ -1,18 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0f1b33;
-  --color-navy-light: #1f2f52;
-  --color-paper: #f0eee3;
-  --color-paper-line: #d9d4c2;
-  --color-marigold: #e8a53a;
-  --color-marigold-dark: #a9701c;
-  --color-maroon: #a13226;
-  --color-green: #276148;
-  --color-ink: #1c1c1a;
+  /* "navy" now carries the primary dark ink — deep wine, not blue */
+  --color-navy: #3a1826;
+  --color-navy-light: #55253a;
+  --color-paper: #f7f2e8;
+  --color-paper-line: #e4d7bd;
+  /* "marigold" now carries the antique gold accent */
+  --color-marigold: #c79a4b;
+  --color-marigold-dark: #8a662c;
+  --color-maroon: #7c3b30;
+  --color-green: #33553c;
+  --color-ink: #241417;
 
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Inter', 'Noto Sans Devanagari', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 }
@@ -33,6 +35,7 @@ body {
 
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
+  letter-spacing: 0.005em;
 }
 
 .font-mono-tag {
@@ -40,34 +43,38 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: 0.04em;
 }
 
+/* A single fine hairline instead of a busy repeating ledger pattern —
+   restrained, closer to a letterpress rule under a heading. */
 .ledger-rules {
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 27px,
-    var(--color-paper-line) 27px,
-    var(--color-paper-line) 28px
-  );
+  border-top: 1px solid var(--color-paper-line);
+  background-image: none;
 }
 
+/* Signature element: a foil-seal mark for Bindu's matched plans —
+   a circular emblem rather than a casual rubber stamp. */
 .stamp {
-  border: 2.5px solid var(--color-maroon);
-  color: var(--color-maroon);
-  border-radius: 6px;
-  transform: rotate(-3deg);
+  border: 1.5px solid var(--color-marigold-dark);
+  color: var(--color-marigold-dark);
+  border-radius: 999px;
   display: inline-flex;
-  padding: 2px 10px;
-  font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.7rem;
-  animation: stamp-in 0.35s ease-out;
+  align-items: center;
+  gap: 0.3em;
+  padding: 2px 11px 2px 8px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 0.75rem;
+  animation: seal-in 0.4s ease-out;
+}
+.stamp::before {
+  content: '✦';
+  font-size: 0.7em;
 }
 
-@keyframes stamp-in {
-  0% { opacity: 0; transform: scale(1.6) rotate(-3deg); }
-  60% { opacity: 1; transform: scale(0.95) rotate(-3deg); }
-  100% { opacity: 1; transform: scale(1) rotate(-3deg); }
+@keyframes seal-in {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 :focus-visible {
@@ -85,7 +92,7 @@ h1, h2, h3, h4, .font-display {
 .input {
   width: 100%;
   border-radius: 0.75rem;
-  border: 1px solid color-mix(in srgb, var(--color-navy) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-navy) 18%, transparent);
   background: white;
   padding: 0.65rem 0.9rem;
   font-size: 0.9rem;

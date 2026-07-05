@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid gap-8 sm:grid-cols-3">
           <div>
-            <div className="font-display text-lg font-bold text-paper">{t('brand')}</div>
+            <div className="font-display text-xl italic font-bold text-paper">{t('brand')}</div>
             <p className="mt-2 text-sm text-paper/60">{t('brand.tag')}</p>
           </div>
           <div>

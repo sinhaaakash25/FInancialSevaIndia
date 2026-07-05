@@ -21,7 +21,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b border-navy/10 bg-paper/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-xl font-bold text-navy">{t('brand')}</span>
+          <span className="font-display text-2xl italic font-bold text-navy">{t('brand')}</span>
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">

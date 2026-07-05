@@ -146,7 +146,7 @@ export default function ChatWidget() {
           {/* Header */}
           <div className="flex items-center justify-between bg-navy px-4 py-3 text-paper">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-marigold font-display text-sm font-bold text-navy">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-marigold font-display text-base italic font-bold text-navy">
                 B
               </div>
               <div>
