@@ -108,3 +108,21 @@ npm run build     # outputs to dist/
   in front of an AI API, retrieve matching plans from `plans.js` server-side,
   and have the model summarise *only* those retrieved plans — never let it
   answer from open-ended memory.
+
+## GitHub Pages (this repo's current setup)
+
+This repo auto-deploys to GitHub Pages via `.github/workflows/deploy.yml` on every
+push to `main`. To finish enabling it (one-time):
+
+1. Repo **Settings → Pages** → Source: **GitHub Actions**.
+2. (Optional) **Settings → Secrets and variables → Actions** → add
+   `VITE_WEB3FORMS_KEY` and `VITE_LEAD_EMAIL` if you want lead emails working
+   on the live site.
+3. Push to `main` (or re-run the workflow from the **Actions** tab) — the site
+   will be live at `https://sinhaaakash25.github.io/FInancialSevaIndia/`.
+4. To use your own domain instead: Settings → Pages → Custom domain → enter it
+   (this creates a `CNAME` file automatically). Then at your domain registrar,
+   point DNS at GitHub Pages (A records to 185.199.108.153 / .109.153 /
+   .110.153 / .111.153, or a CNAME to `sinhaaakash25.github.io` for a `www`
+   subdomain). Once that's live, change `base` in `vite.config.js` back to
+   `'/'` and `pathSegmentsToKeep` in `public/404.html` to `0`, then push again.
