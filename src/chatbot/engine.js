@@ -46,16 +46,10 @@ export const BUDGET_OPTIONS = [
 export function recommendPlans({ need, age, budget }) {
   let candidates = PLANS.filter((p) => p.idealFor.includes(need));
 
-  // Age-based nudges: senior citizens toward pension/term, young toward term/ULIP
+  // Age-based nudge: senior citizens lean toward pension/term plans
   if (age === 'above60') {
-    candidates = candidates.filter((p) => ['pension', 'term'].includes(p.category)).length
-      ? candidates.filter((p) => ['pension', 'term'].includes(p.category))
-      : candidates;
-  }
-  if (age === 'below30' && need === 'savings') {
-    candidates = candidates.some((p) => p.category === 'ulip')
-      ? candidates
-      : candidates;
+    const seniorFriendly = candidates.filter((p) => ['pension', 'term'].includes(p.category));
+    if (seniorFriendly.length) candidates = seniorFriendly;
   }
 
   // Budget-based nudge: low budget favours term plans (cheapest per rupee of cover)

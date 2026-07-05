@@ -37,7 +37,7 @@ export default function Plans() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-3xl font-700 text-navy">{t('plans.title')}</h1>
+      <h1 className="font-display text-3xl font-bold text-navy">{t('plans.title')}</h1>
       <p className="mt-2 max-w-xl text-ink/65">{t('plans.subtitle')}</p>
 
       <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -75,13 +75,13 @@ export default function Plans() {
 
       {activeCategory === 'all' && !query && (
         <div className="mt-16 rounded-2xl border border-navy/10 bg-white p-6">
-          <h2 className="font-display text-lg font-600 text-navy">{t('riders.title')}</h2>
+          <h2 className="font-display text-lg font-semibold text-navy">{t('riders.title')}</h2>
           <p className="mt-1 text-sm text-ink/60">{t('riders.subtitle')}</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {RIDERS.map((r) => (
               <div key={r.id} className="rounded-xl border border-navy/10 p-3.5">
                 <div className="font-mono-tag text-[0.65rem] text-ink/40">UIN {r.uin}</div>
-                <div className="mt-1 font-display text-sm font-600 text-navy">{r.name[lang]}</div>
+                <div className="mt-1 font-display text-sm font-semibold text-navy">{r.name[lang]}</div>
                 <p className="mt-1 text-xs text-ink/60">{r.note[lang]}</p>
               </div>
             ))}

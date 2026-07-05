@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUpRight } from 'lucide-react';
 
 const CATEGORY_ACCENT = {
-  term: 'text-maroon border-maroon/30',
-  endowment: 'text-navy border-navy/25',
-  wholeLife: 'text-navy border-navy/25',
-  moneyBack: 'text-marigold-dark border-marigold/40',
-  pension: 'text-green border-green/30',
-  ulip: 'text-green border-green/30',
-  rider: 'text-maroon border-maroon/30',
+  term: 'text-maroon bg-maroon/10',
+  endowment: 'text-navy bg-navy/8',
+  wholeLife: 'text-navy bg-navy/8',
+  moneyBack: 'text-marigold-dark bg-marigold/15',
+  pension: 'text-green bg-green/10',
+  ulip: 'text-green bg-green/10',
+  rider: 'text-maroon bg-maroon/10',
 };
 
 export default function PlanCard({ plan, stamped = false }) {
@@ -24,14 +24,14 @@ export default function PlanCard({ plan, stamped = false }) {
     >
       <div>
         <div className="flex items-center justify-between gap-2">
-          <span className={`rounded-full border px-2.5 py-1 font-mono-tag text-[0.65rem] uppercase ${accent}`}>
+          <span className={`rounded-full px-2.5 py-1 font-mono-tag text-[0.65rem] uppercase ${accent}`}>
             {t(`cat.${plan.category}`)}
           </span>
           {stamped && (
-            <span className="stamp text-green">{lang === 'hi' ? 'सुझाया' : 'matched'}</span>
+            <span className="stamp">{lang === 'hi' ? 'सुझाया' : 'matched'}</span>
           )}
         </div>
-        <h3 className="mt-3 font-display text-lg font-600 leading-snug text-navy">
+        <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-navy">
           {plan.name[lang]}
         </h3>
         <p className="mt-1.5 text-sm text-ink/70">{plan.tagline[lang]}</p>

@@ -140,11 +140,11 @@ export default function ChatWidget() {
           {/* Header */}
           <div className="flex items-center justify-between bg-navy px-4 py-3 text-paper">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-marigold font-display text-sm font-700 text-navy">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-marigold font-display text-sm font-bold text-navy">
                 B
               </div>
               <div>
-                <div className="font-display text-sm font-600 leading-tight">{t('chat.name')}</div>
+                <div className="font-display text-sm font-semibold leading-tight">{t('chat.name')}</div>
                 <div className="text-[0.7rem] text-paper/60 leading-tight">{t('chat.role')}</div>
               </div>
             </div>

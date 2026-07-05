@@ -27,7 +27,7 @@ export default function Contact() {
 
   return (
     <div className="mx-auto max-w-xl px-4 py-16 sm:px-6">
-      <h1 className="font-display text-3xl font-700 text-navy">{t('contact.title')}</h1>
+      <h1 className="font-display text-3xl font-bold text-navy">{t('contact.title')}</h1>
       <p className="mt-2 text-ink/65">{t('contact.subtitle')}</p>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-4">

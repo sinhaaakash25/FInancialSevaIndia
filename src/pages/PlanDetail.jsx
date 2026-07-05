@@ -27,10 +27,10 @@ export default function PlanDetail() {
       </Link>
 
       <div className="ledger-rules mt-6 rounded-2xl border border-navy/10 bg-white p-6 sm:p-8">
-        <span className="font-mono-tag inline-block rounded-full border border-navy/20 px-2.5 py-1 text-[0.65rem] uppercase text-navy/60">
+        <span className="font-mono-tag inline-block rounded-full bg-navy/8 px-2.5 py-1 text-[0.65rem] uppercase text-navy">
           {t(`cat.${plan.category}`)}
         </span>
-        <h1 className="mt-4 font-display text-2xl font-700 leading-snug text-navy sm:text-3xl">
+        <h1 className="mt-4 font-display text-2xl font-bold leading-snug text-navy sm:text-3xl">
           {plan.name[lang]}
         </h1>
         <p className="mt-2 text-lg text-ink/70">{plan.tagline[lang]}</p>
@@ -80,7 +80,7 @@ function Field({ label, value, mono }) {
   return (
     <div>
       <div className="text-[0.65rem] uppercase text-ink/40">{label}</div>
-      <div className={`mt-0.5 text-sm font-600 text-navy ${mono ? 'font-mono-tag' : ''}`}>{value}</div>
+      <div className={`mt-0.5 text-sm font-semibold text-navy ${mono ? 'font-mono-tag' : ''}`}>{value}</div>
     </div>
   );
 }

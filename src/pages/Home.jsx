@@ -15,7 +15,7 @@ export default function Home() {
           <span className="font-mono-tag inline-block rounded-full border border-navy/20 bg-white px-3 py-1 text-[0.7rem] uppercase text-navy/60">
             {t('home.hero.eyebrow')}
           </span>
-          <h1 className="mt-5 max-w-2xl font-display text-4xl font-700 leading-[1.1] text-navy sm:text-5xl">
+          <h1 className="mt-5 max-w-2xl font-display text-4xl font-bold leading-[1.1] text-navy sm:text-5xl">
             {t('home.hero.title')}
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink/70">{t('home.hero.subtitle')}</p>
@@ -40,7 +40,7 @@ export default function Home() {
       {/* Categories */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <div className="flex items-end justify-between">
-          <h2 className="font-display text-2xl font-600 text-navy">{t('home.categories.title')}</h2>
+          <h2 className="font-display text-2xl font-semibold text-navy">{t('home.categories.title')}</h2>
           <Link to="/plans" className="text-sm font-medium text-marigold-dark hover:underline">
             {t('home.categories.viewAll')}
           </Link>
@@ -55,12 +55,12 @@ export default function Home() {
       {/* Why */}
       <section className="border-y border-navy/10 bg-white/50">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="font-display text-2xl font-600 text-navy">{t('home.why.title')}</h2>
+          <h2 className="font-display text-2xl font-semibold text-navy">{t('home.why.title')}</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             {[1, 2, 3].map((i) => (
               <div key={i}>
                 <div className="font-mono-tag text-xs text-marigold-dark">0{i}</div>
-                <h3 className="mt-2 font-display text-base font-600 text-navy">{t(`home.why.${i}.title`)}</h3>
+                <h3 className="mt-2 font-display text-base font-semibold text-navy">{t(`home.why.${i}.title`)}</h3>
                 <p className="mt-1.5 text-sm text-ink/65">{t(`home.why.${i}.body`)}</p>
               </div>
             ))}
@@ -71,7 +71,7 @@ export default function Home() {
       {/* Chat CTA */}
       <section id="chat-hint" className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <div className="rounded-3xl bg-navy px-6 py-10 text-center text-paper sm:px-14">
-          <h2 className="font-display text-2xl font-600 sm:text-3xl">{t('home.cta.title')}</h2>
+          <h2 className="font-display text-2xl font-semibold sm:text-3xl">{t('home.cta.title')}</h2>
           <p className="mx-auto mt-3 max-w-lg text-paper/70">{t('home.cta.body')}</p>
           <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-marigold px-5 py-3 text-sm font-medium text-navy">
             <MessageCircle size={16} /> {t('home.cta.button')} — {t('chat.launcher')} ↘
@@ -85,7 +85,7 @@ export default function Home() {
 function Stat({ value, label }) {
   return (
     <div>
-      <div className="font-display text-2xl font-700 text-navy">{value}+</div>
+      <div className="font-display text-2xl font-bold text-navy">{value}+</div>
       <div className="text-xs text-ink/55">{label}</div>
     </div>
   );
