@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #142140;
+  --color-navy-light: #24345c;
+  --color-paper: #eef1ec;
+  --color-paper-line: #d7ddd3;
+  --color-marigold: #e2a13a;
+  --color-marigold-dark: #b97e21;
+  --color-maroon: #8c2f39;
+  --color-green: #2f6f4f;
+  --color-ink: #1c1c1a;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', 'Noto Sans Devanagari', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+[lang="hi"] body, .lang-hi {
+  font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.ledger-rules {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    var(--color-paper-line) 27px,
+    var(--color-paper-line) 28px
+  );
+}
+
+.stamp {
+  border: 2.5px solid currentColor;
+  border-radius: 6px;
+  transform: rotate(-3deg);
+  display: inline-flex;
+  padding: 2px 10px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  animation: stamp-in 0.35s ease-out;
+}
+
+@keyframes stamp-in {
+  0% { opacity: 0; transform: scale(1.6) rotate(-3deg); }
+  60% { opacity: 1; transform: scale(0.95) rotate(-3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(-3deg); }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-marigold-dark);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 6px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--color-paper-line); border-radius: 3px; }
+
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-navy) 15%, transparent);
+  background: white;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.9rem;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--color-marigold-dark);
+}
